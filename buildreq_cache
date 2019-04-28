@@ -1,0 +1,10 @@
+0.0.3
+R-Rcpp
+R-dplyr
+R-glue
+R-lazyeval
+R-pillar
+R-pkgconfig
+R-purrr
+R-tibble
+R-tidyselect
