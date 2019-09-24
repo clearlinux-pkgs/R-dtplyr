@@ -4,38 +4,24 @@
 #
 Name     : R-dtplyr
 Version  : 0.0.3
-Release  : 4
+Release  : 5
 URL      : https://cran.r-project.org/src/contrib/dtplyr_0.0.3.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/dtplyr_0.0.3.tar.gz
 Summary  : Data Table Back-End for 'dplyr'
 Group    : Development/Tools
 License  : GPL-2.0+
-Requires: R-Rcpp
+Requires: R-data.table
 Requires: R-dplyr
-Requires: R-glue
 Requires: R-lazyeval
-Requires: R-pillar
-Requires: R-pkgconfig
-Requires: R-purrr
-Requires: R-tibble
-Requires: R-tidyselect
-BuildRequires : R-Rcpp
+Requires: R-rlang
 BuildRequires : R-data.table
 BuildRequires : R-dplyr
-BuildRequires : R-glue
 BuildRequires : R-lazyeval
-BuildRequires : R-pillar
-BuildRequires : R-pkgconfig
-BuildRequires : R-purrr
-BuildRequires : R-tibble
-BuildRequires : R-tidyselect
+BuildRequires : R-rlang
 BuildRequires : buildreq-R
 
 %description
-# dtplyr
-[![Travis-CI Build Status](https://travis-ci.org/hadley/dtplyr.svg?branch=master)](https://travis-ci.org/hadley/dtplyr)
-[![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/dtplyr)](https://cran.r-project.org/package=dtplyr)
-[![Coverage Status](https://img.shields.io/codecov/c/github/hadley/dtplyr/master.svg)](https://codecov.io/github/hadley/dtplyr?branch=master)
+can seamlessly use data table and 'dplyr' together.
 
 %prep
 %setup -q -c -n dtplyr
@@ -44,13 +30,13 @@ BuildRequires : buildreq-R
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-export LANG=C
-export SOURCE_DATE_EPOCH=1556488798
+export LANG=C.UTF-8
+export SOURCE_DATE_EPOCH=1569287420
 
 %install
-export SOURCE_DATE_EPOCH=1556488798
+export SOURCE_DATE_EPOCH=1569287420
 rm -rf %{buildroot}
-export LANG=C
+export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -79,7 +65,7 @@ R CMD INSTALL --preclean --install-tests --built-timestamp=${SOURCE_DATE_EPOCH} 
 cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 %{__rm} -rf %{buildroot}%{_datadir}/R/library/R.css
 %check
-export LANG=C
+export LANG=C.UTF-8
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
