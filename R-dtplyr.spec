@@ -4,7 +4,7 @@
 #
 Name     : R-dtplyr
 Version  : 0.0.3
-Release  : 5
+Release  : 6
 URL      : https://cran.r-project.org/src/contrib/dtplyr_0.0.3.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/dtplyr_0.0.3.tar.gz
 Summary  : Data Table Back-End for 'dplyr'
@@ -19,9 +19,13 @@ BuildRequires : R-dplyr
 BuildRequires : R-lazyeval
 BuildRequires : R-rlang
 BuildRequires : buildreq-R
+BuildRequires : util-linux
 
 %description
-can seamlessly use data table and 'dplyr' together.
+# dtplyr
+[![Travis-CI Build Status](https://travis-ci.org/hadley/dtplyr.svg?branch=master)](https://travis-ci.org/hadley/dtplyr)
+[![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/dtplyr)](https://cran.r-project.org/package=dtplyr)
+[![Coverage Status](https://img.shields.io/codecov/c/github/hadley/dtplyr/master.svg)](https://codecov.io/github/hadley/dtplyr?branch=master)
 
 %prep
 %setup -q -c -n dtplyr
@@ -31,10 +35,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1569287420
+export SOURCE_DATE_EPOCH=1571821003
 
 %install
-export SOURCE_DATE_EPOCH=1569287420
+export SOURCE_DATE_EPOCH=1571821003
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
