@@ -4,7 +4,7 @@
 #
 Name     : R-dtplyr
 Version  : 1.0.1
-Release  : 11
+Release  : 12
 URL      : https://cran.r-project.org/src/contrib/dtplyr_1.0.1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/dtplyr_1.0.1.tar.gz
 Summary  : Data Table Back-End for 'dplyr'
@@ -25,35 +25,27 @@ BuildRequires : R-tidyselect
 BuildRequires : buildreq-R
 
 %description
-# dtplyr
-<!-- badges: start -->
-[![CRAN
-status](https://www.r-pkg.org/badges/version/dtplyr)](https://cran.r-project.org/package=dtplyr)
-[![Travis build
-status](https://travis-ci.org/tidyverse/dtplyr.svg?branch=master)](https://travis-ci.org/tidyverse/dtplyr)
-[![Codecov test
-coverage](https://codecov.io/gh/tidyverse/dtplyr/branch/master/graph/badge.svg)](https://codecov.io/gh/tidyverse/dtplyr?branch=master)
-[![Lifecycle:
-maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
-<!-- badges: end -->
+is to allow you to write 'dplyr' code that is automatically translated to 
+    the equivalent, but usually much faster, data.table code.
 
 %prep
 %setup -q -c -n dtplyr
+cd %{_builddir}/dtplyr
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1579799727
+export SOURCE_DATE_EPOCH=1589776896
 
 %install
-export SOURCE_DATE_EPOCH=1579799727
+export SOURCE_DATE_EPOCH=1589776896
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
+export FCFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
+export FFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
 export CXXFLAGS="$CXXFLAGS -O3 -flto -fno-semantic-interposition "
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
