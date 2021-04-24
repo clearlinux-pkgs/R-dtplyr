@@ -4,7 +4,7 @@
 #
 Name     : R-dtplyr
 Version  : 1.1.0
-Release  : 15
+Release  : 16
 URL      : https://cran.r-project.org/src/contrib/dtplyr_1.1.0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/dtplyr_1.1.0.tar.gz
 Summary  : Data Table Back-End for 'dplyr'
