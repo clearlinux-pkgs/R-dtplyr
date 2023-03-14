@@ -4,7 +4,7 @@
 #
 Name     : R-dtplyr
 Version  : 1.3.0
-Release  : 35
+Release  : 36
 URL      : https://cran.r-project.org/src/contrib/dtplyr_1.3.0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/dtplyr_1.3.0.tar.gz
 Summary  : Data Table Back-End for 'dplyr'
@@ -32,9 +32,6 @@ BuildRequires : R-tidyr
 BuildRequires : R-tidyselect
 BuildRequires : R-vctrs
 BuildRequires : buildreq-R
-# Suppress stripping binaries
-%define __strip /bin/true
-%define debug_package %{nil}
 
 %description
 'dtplyr' is to allow you to write 'dplyr' code that is automatically
@@ -50,10 +47,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1677261029
+export SOURCE_DATE_EPOCH=1678816499
 
 %install
-export SOURCE_DATE_EPOCH=1677261029
+export SOURCE_DATE_EPOCH=1678816499
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
